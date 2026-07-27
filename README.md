@@ -14,10 +14,18 @@ Protein-image analysis is not implemented yet. Protein images save a structured 
 
 ## Installation
 
+From PyPI, once the first release is published:
+
+```bash
+pip install cryoemdoc
+cryoemdoc download-models
+```
+
 Local editable install:
 
 ```bash
 pip install -e .
+cryoemdoc download-models
 ```
 
 For MRC support:
@@ -64,6 +72,7 @@ print(summary)
 ## CLI
 
 ```bash
+cryoemdoc download-models
 cryoemdoc analyze image.png
 cryoemdoc analyze image.png --use-atlas-csv
 cryoemdoc classify image.png
@@ -159,7 +168,9 @@ cryoemdoc atlas-prerecognize ./atlases --write-square-details
 
 ## Model Artifacts
 
-The local package includes the prototype artifacts under `src/cryoemdoc/artifacts/`:
+The Python package includes small JSON metadata artifacts under `src/cryoemdoc/artifacts/`.
+The `.pt` model weights are distributed separately as GitHub Release assets so the
+PyPI package stays small.
 
 - `image_classifier/best_resnet18_step1_classifier.pt`
 - `square_analyzer/best_model_state.pt`
@@ -167,7 +178,16 @@ The local package includes the prototype artifacts under `src/cryoemdoc/artifact
 - `atlas_analyzer_with_csv/best_model_state.pt`
 - saved `label_mappings.json`, `thresholds.json`, metadata, and tabular preprocessing JSON
 
-The `.pt` files are around 45 MB each. For a public GitHub repository, use Git LFS, GitHub Releases, or Hugging Face Hub for the model weights. The package can also load artifacts from an external root:
+Download the default model release:
+
+```bash
+cryoemdoc download-models
+```
+
+This downloads `cryoemdoc-models-v0.1.0.zip` from the `v0.1.0` GitHub Release
+and installs it into `~/.cache/cryoemdoc/models/v0.1.0/`.
+
+The package can also load artifacts from an external root:
 
 ```bash
 export CRYOEMDOC_MODEL_DIR=/path/to/model_root
@@ -180,6 +200,9 @@ summary = analyze_square("image.jpg", model_dir="/path/to/model_root")
 ```
 
 The external model root should contain the same subfolder layout as `src/cryoemdoc/artifacts`.
+
+Maintainer instructions for building and uploading the model zip are in
+`docs/github_releases.md`.
 
 ## Supported Inputs
 

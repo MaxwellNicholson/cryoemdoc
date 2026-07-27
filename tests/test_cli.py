@@ -20,3 +20,4 @@ def test_cli_help_runs():
     )
     assert completed.returncode == 0
     assert "atlas-prerecognize" in completed.stdout
+    assert "download-models" in completed.stdout

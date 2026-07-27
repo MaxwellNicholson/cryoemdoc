@@ -10,8 +10,10 @@ from typing import Any
 
 from .atlas import analyze_atlas, analyze_atlas_images
 from .atlas_prerecognition import atlas_prerecognize
+from .assets import DEFAULT_MODEL_VERSION, DEFAULT_RELEASE_REPOSITORY
 from .classifier import classify_image, classify_images
 from .io import write_json, write_records_csv
+from .model_download import download_models, release_asset_url
 from .pipeline import analyze_image, analyze_images
 from .square import analyze_square, analyze_square_images
 
@@ -151,6 +153,18 @@ def cmd_prerecognize(args: argparse.Namespace) -> None:
     print(json.dumps({k: v for k, v in result.items() if k != "rows"}, indent=2, default=_json_default))
 
 
+def cmd_download_models(args: argparse.Namespace) -> None:
+    url = release_asset_url(version=args.version, repository=args.repository, archive_name=args.archive_name)
+    print(f"Downloading cryoEMdoc models from {url}")
+    model_root = download_models(
+        version=args.version,
+        repository=args.repository,
+        archive_name=args.archive_name,
+        destination=args.destination,
+    )
+    print(f"Models are ready at {model_root}")
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="cryoemdoc", description="cryo-EM image triage and documentation")
     parser.add_argument("--version", action="version", version="cryoemdoc 0.1.0")
@@ -193,6 +207,13 @@ def build_parser() -> argparse.ArgumentParser:
     prerec_parser.add_argument("--output-format", choices=["summary", "squares"], default="summary", help="Write one row per atlas or one row per detected square.")
     prerec_parser.add_argument("--write-square-details", action="store_true", help="Also write atlas_square_data.csv when output-format is summary.")
     prerec_parser.set_defaults(func=cmd_prerecognize)
+
+    models_parser = subparsers.add_parser("download-models", help="Download model weights from a GitHub Release.")
+    models_parser.add_argument("--version", default=DEFAULT_MODEL_VERSION, help="GitHub Release tag to download.")
+    models_parser.add_argument("--repository", default=DEFAULT_RELEASE_REPOSITORY, help="GitHub owner/repository that hosts the release.")
+    models_parser.add_argument("--archive-name", default=None, help="Release asset zip name. Defaults to cryoemdoc-models-<version>.zip.")
+    models_parser.add_argument("--destination", default=None, help="Model root destination. Defaults to ~/.cache/cryoemdoc/models/<version>.")
+    models_parser.set_defaults(func=cmd_download_models)
 
     return parser
 
