@@ -1,0 +1,55 @@
+{
+  "feature_columns": [
+    "visible_square_count",
+    "good_square_count",
+    "non_uniform_square_count",
+    "cracked_square_count",
+    "bad_size_square_count",
+    "atlas_quality_score",
+    "good_square_fraction",
+    "non_uniform_square_fraction",
+    "cracked_square_fraction",
+    "bad_size_square_fraction",
+    "atlas_score_features_missing"
+  ],
+  "fill_values": {
+    "visible_square_count": 356.0,
+    "good_square_count": 61.0,
+    "non_uniform_square_count": 3.0,
+    "cracked_square_count": 0.0,
+    "bad_size_square_count": 202.5,
+    "atlas_quality_score": 16.501861171876957,
+    "good_square_fraction": 0.16578947368421051,
+    "non_uniform_square_fraction": 0.009140767824497258,
+    "cracked_square_fraction": 0.0,
+    "bad_size_square_fraction": 0.7369519832985386,
+    "atlas_score_features_missing": 0.0
+  },
+  "means": {
+    "visible_square_count": 331.05592105263156,
+    "good_square_count": 79.82914250669045,
+    "non_uniform_square_count": 23.63361396074933,
+    "cracked_square_count": 12.45277653880464,
+    "bad_size_square_count": 215.14038804638716,
+    "atlas_quality_score": 22.83578343381128,
+    "good_square_fraction": 0.2412022689281901,
+    "non_uniform_square_fraction": 0.06867456679141223,
+    "cracked_square_fraction": 0.03920321661643274,
+    "bad_size_square_fraction": 0.6486796652438103,
+    "atlas_score_features_missing": 0.0
+  },
+  "stds": {
+    "visible_square_count": 171.9273678069676,
+    "good_square_count": 90.03301703254981,
+    "non_uniform_square_count": 46.11445494564949,
+    "cracked_square_count": 29.0436424698546,
+    "bad_size_square_count": 173.95474299671451,
+    "atlas_quality_score": 24.023816327609445,
+    "good_square_fraction": 0.2571436832012201,
+    "non_uniform_square_fraction": 0.13063444333916036,
+    "cracked_square_fraction": 0.08570045353741866,
+    "bad_size_square_fraction": 0.3275831934634373,
+    "atlas_score_features_missing": 1.0
+  },
+  "atlas_score_csv": "/nsls2/users/mnicholso/cryoemdoc_prototype/data/atlas_summary_scores.csv"
+}

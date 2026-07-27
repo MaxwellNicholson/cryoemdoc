@@ -1,0 +1,41 @@
+{
+  "tag_thresholds": {
+    "cracks": 0.1997772157,
+    "non-uniform ice": 0.1310483813,
+    "thick ice": 0.5076447576
+  },
+  "minimum_tag_thresholds": null,
+  "tag_threshold_objective": "specific_and_all_accuracy",
+  "tag_specific_accuracy_weight": 0.5,
+  "tag_exact_match_accuracy_weight": 0.5,
+  "tag_threshold_search": {
+    "method": "exhaustive",
+    "full_combination_count": 8000,
+    "evaluated_combination_count": 8000,
+    "candidate_count_by_tag": {
+      "cracks": 20,
+      "non-uniform ice": 20,
+      "thick ice": 20
+    },
+    "individual_accuracy_best_thresholds": {
+      "cracks": 0.1997772157,
+      "non-uniform ice": 0.274554342,
+      "thick ice": 0.5076447576
+    },
+    "selected_scores": {
+      "selection_score": 0.5,
+      "joint_accuracy": 0.5,
+      "mean_tag_accuracy": 0.625,
+      "min_tag_accuracy": 0.4375,
+      "exact_match": 0.375,
+      "macro_balanced_accuracy": 0.6335978835978836,
+      "macro_f1": 0.706031746031746,
+      "sample_jaccard": 0.59375
+    }
+  },
+  "use_tag_pos_weight": false,
+  "rating_threshold": 0.65,
+  "rating_threshold_objective": "unacceptable_f1",
+  "min_unacceptable_precision": 0.4,
+  "max_predicted_unacceptable_fraction": 0.65
+}

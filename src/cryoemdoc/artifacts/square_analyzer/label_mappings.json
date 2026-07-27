@@ -1,0 +1,45 @@
+{
+  "tags": [
+    "thick ice",
+    "non-uniform ice",
+    "ice contamination"
+  ],
+  "tag_to_idx": {
+    "thick ice": 0,
+    "non-uniform ice": 1,
+    "ice contamination": 2
+  },
+  "rating_classes": [
+    "good",
+    "acceptable",
+    "unacceptable"
+  ],
+  "rating_to_idx": {
+    "good": 0,
+    "acceptable": 1,
+    "unacceptable": 2
+  },
+  "tag_aliases": {
+    "thick ice": "thick ice",
+    "too-thick ice": "thick ice",
+    "too thick ice": "thick ice",
+    "some-thick ice": "thick ice",
+    "some thick ice": "thick ice",
+    "non-uniform": "non-uniform ice",
+    "non uniform": "non-uniform ice",
+    "non-uniform ice": "non-uniform ice",
+    "nonuniform": "non-uniform ice",
+    "nonuniform ice": "non-uniform ice",
+    "ice contamination": "ice contamination",
+    "contamination": "ice contamination",
+    "contaminated": "ice contamination"
+  },
+  "issue_tags": [
+    "thick ice",
+    "non-uniform ice",
+    "ice contamination"
+  ],
+  "map_good_to_acceptable": false,
+  "exclude_only_unmapped_tag_rows": true,
+  "no_issue_tag_convention": "all-zero issue-tag target"
+}

@@ -1,0 +1,28 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+.venv/
+venv/
+env/
+.env
+.DS_Store
+.ipynb_checkpoints/
+outputs_step2/
+*.log
+
+# Local research data / generated outputs
+data/
+outputs/
+tmp/
+poster_assets/
+*_standardized_prediction.json
+
+# Large model weights - use Git LFS or external hosting
+*.pt

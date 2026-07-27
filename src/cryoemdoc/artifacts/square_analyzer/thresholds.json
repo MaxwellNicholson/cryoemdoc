@@ -1,0 +1,16 @@
+{
+  "tag_thresholds": {
+    "thick ice": 0.7,
+    "non-uniform ice": 0.55,
+    "ice contamination": 0.3
+  },
+  "minimum_tag_thresholds": {},
+  "tag_threshold_objective": "macro_f1_plus_exact_match",
+  "tag_exact_match_weight": 0.35,
+  "tag_jaccard_weight": 0.15,
+  "rating_prediction_rule": "unacceptable_threshold_then_good_acceptable_argmax",
+  "rating_threshold": 0.5,
+  "rating_threshold_objective": "unacceptable_f1",
+  "min_unacceptable_precision": 0.4,
+  "max_predicted_unacceptable_fraction": 0.65
+}

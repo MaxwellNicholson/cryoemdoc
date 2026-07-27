@@ -1,0 +1,52 @@
+{
+  "tags": [
+    "cracks",
+    "non-uniform ice",
+    "thick ice"
+  ],
+  "tag_to_idx": {
+    "cracks": 0,
+    "non-uniform ice": 1,
+    "thick ice": 2
+  },
+  "rating_classes": [
+    "acceptable",
+    "unacceptable"
+  ],
+  "rating_to_idx": {
+    "acceptable": 0,
+    "unacceptable": 1
+  },
+  "tag_aliases": {
+    "crack": "cracks",
+    "cracks": "cracks",
+    "cracked": "cracks",
+    "non-uniform": "non-uniform ice",
+    "non uniform": "non-uniform ice",
+    "non-uniform ice": "non-uniform ice",
+    "nonuniform": "non-uniform ice",
+    "nonuniform ice": "non-uniform ice",
+    "too-thick ice": "thick ice",
+    "some-thick ice": "thick ice",
+    "thick ice": "thick ice",
+    "too thick ice": "thick ice",
+    "some thick ice": "thick ice"
+  },
+  "map_good_to_acceptable": true,
+  "exclude_only_unmapped_tag_rows": true,
+  "atlas_score_csv": "/nsls2/users/mnicholso/cryoemdoc_prototype/data/atlas_summary_scores.csv",
+  "use_atlas_score_features": true,
+  "atlas_score_feature_columns": [
+    "visible_square_count",
+    "good_square_count",
+    "non_uniform_square_count",
+    "cracked_square_count",
+    "bad_size_square_count",
+    "atlas_quality_score",
+    "good_square_fraction",
+    "non_uniform_square_fraction",
+    "cracked_square_fraction",
+    "bad_size_square_fraction",
+    "atlas_score_features_missing"
+  ]
+}

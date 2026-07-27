@@ -1,0 +1,111 @@
+{
+  "epoch": 6,
+  "phase": "heads",
+  "metric_name": "val_unacceptable_f1",
+  "metric_value": 0.8888888888888888,
+  "config": {
+    "requested_project_root": "/nsls2/users/mnicholso/cryoemdoc_prototype",
+    "labels_filename": null,
+    "image_dir_name": "Square_All",
+    "output_dir_name": "square_analyzer",
+    "image_size": 384,
+    "batch_size": 6,
+    "num_workers": 0,
+    "head_epochs": 8,
+    "fine_tune_epochs": 12,
+    "learning_rate": 0.001,
+    "fine_tune_learning_rate": 1e-05,
+    "weight_decay": 0.0001,
+    "train_size": 0.7,
+    "val_size": 0.15,
+    "test_size": 0.15,
+    "seed": 42,
+    "tag_probability_threshold": 0.5,
+    "minimum_tag_thresholds": {},
+    "rating_probability_threshold": 0.5,
+    "threshold_grid": [
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3,
+      0.35,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9
+    ],
+    "tune_tag_thresholds": true,
+    "tag_threshold_objective": "macro_f1_plus_exact_match",
+    "tag_exact_match_weight": 0.35,
+    "tag_jaccard_weight": 0.15,
+    "tune_rating_threshold": true,
+    "rating_threshold_objective": "unacceptable_f1",
+    "min_unacceptable_precision": 0.4,
+    "max_predicted_unacceptable_fraction": 0.65,
+    "pretrained": true,
+    "freeze_backbone_initially": true,
+    "unfreeze_layer4_for_finetune": true,
+    "orientation_is_meaningful": false,
+    "early_stopping_metric": "val_unacceptable_f1",
+    "early_stopping_patience": 5,
+    "min_delta": 0.0001,
+    "auto_simplify_tags": true,
+    "map_good_to_acceptable": false,
+    "exclude_only_unmapped_tag_rows": true,
+    "group_column": null,
+    "use_group_split_if_possible": true
+  },
+  "label_mappings": {
+    "tags": [
+      "thick ice",
+      "non-uniform ice",
+      "ice contamination"
+    ],
+    "tag_to_idx": {
+      "thick ice": 0,
+      "non-uniform ice": 1,
+      "ice contamination": 2
+    },
+    "rating_classes": [
+      "good",
+      "acceptable",
+      "unacceptable"
+    ],
+    "rating_to_idx": {
+      "good": 0,
+      "acceptable": 1,
+      "unacceptable": 2
+    },
+    "tag_aliases": {
+      "thick ice": "thick ice",
+      "too-thick ice": "thick ice",
+      "too thick ice": "thick ice",
+      "some-thick ice": "thick ice",
+      "some thick ice": "thick ice",
+      "non-uniform": "non-uniform ice",
+      "non uniform": "non-uniform ice",
+      "non-uniform ice": "non-uniform ice",
+      "nonuniform": "non-uniform ice",
+      "nonuniform ice": "non-uniform ice",
+      "ice contamination": "ice contamination",
+      "contamination": "ice contamination",
+      "contaminated": "ice contamination"
+    },
+    "issue_tags": [
+      "thick ice",
+      "non-uniform ice",
+      "ice contamination"
+    ],
+    "map_good_to_acceptable": false,
+    "exclude_only_unmapped_tag_rows": true,
+    "no_issue_tag_convention": "all-zero issue-tag target"
+  }
+}
