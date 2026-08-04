@@ -21,6 +21,13 @@ pip install cryoemdoc
 cryoemdoc download-models
 ```
 
+If this doesn't work please try this:
+
+```bash
+py -m pip install git+https://github.com/MaxwellNicholson/cryoemdoc.git
+cryoemdoc download-models
+```
+
 Local editable install:
 
 ```bash
