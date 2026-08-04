@@ -80,6 +80,7 @@ Image: square.jpg
 Image type: Square
 Predicted rating: acceptable
 Predicted tags: no issues
+Recommendations: no recommendation
 ```
 
 ## Batch Prediction
@@ -142,6 +143,7 @@ First image: first.png
 Image type: Atlas
 Predicted rating: unacceptable
 Predicted tags: cracks
+Recommendations: decrease glow discharge time/current
 Showing 1 of 2 results; the rest are in the saved file.
 ```
 

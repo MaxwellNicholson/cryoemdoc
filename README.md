@@ -61,7 +61,7 @@ summary = analyze_image(
 print(summary)
 ```
 
-Prediction functions save standardized JSON and return a short printable summary. If `output` is omitted or blank, the JSON file is saved in the current working directory.
+Prediction functions save standardized JSON and return a short printable summary with the rating, tags, and recommendations. If `output` is omitted or blank, the JSON file is saved in the current working directory.
 
 `atlas_features` supports:
 

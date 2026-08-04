@@ -33,6 +33,7 @@ def test_public_square_saves_standardized_json_and_returns_summary(monkeypatch, 
     assert saved["artifacts"]["standardized_output"] == str(output_path)
     assert "Predicted rating: acceptable" in summary
     assert "Predicted tags: no issues" in summary
+    assert "Recommendations: no recommendation" in summary
 
 
 def test_public_batch_summary_shows_first_and_saves_all(monkeypatch, tmp_path):
@@ -44,6 +45,7 @@ def test_public_batch_summary_shows_first_and_saves_all(monkeypatch, tmp_path):
                 "analysis": {
                     "analyzer": "atlas_without_csv",
                     "predicted_tags": ["cracks"],
+                    "recommendations": ["decrease glow discharge time/current"],
                     "predicted_rating": "unacceptable",
                 },
             },
@@ -66,6 +68,7 @@ def test_public_batch_summary_shows_first_and_saves_all(monkeypatch, tmp_path):
     assert len(saved["items"]) == 2
     assert saved["items"][0]["image_path"] == "first.jpg"
     assert "First image: first.jpg" in summary
+    assert "Recommendations: decrease glow discharge time/current" in summary
     assert "Showing 1 of 2 results; the rest are in the saved file." in summary
 
 

@@ -35,6 +35,19 @@ def _normalize_tags(tags: Any) -> list[str]:
     return normalized or [NO_ISSUES_LABEL]
 
 
+def _normalize_recommendations(recommendations: Any) -> list[str]:
+    if recommendations is None:
+        return []
+    if isinstance(recommendations, str):
+        raw_recommendations = [recommendation.strip() for recommendation in recommendations.split(";")]
+    else:
+        try:
+            raw_recommendations = [str(recommendation).strip() for recommendation in recommendations]
+        except TypeError:
+            raw_recommendations = [str(recommendations).strip()]
+    return [recommendation for recommendation in raw_recommendations if recommendation]
+
+
 def _result_source(raw_result: dict[str, Any]) -> dict[str, Any]:
     analysis = raw_result.get("analysis")
     if isinstance(analysis, dict):
@@ -216,6 +229,9 @@ def _item_summary(item: dict[str, Any], *, first: bool) -> list[str]:
         lines.append(f"Image type: {image_type['label']}")
     lines.append(f"Predicted rating: {label}")
     lines.append(f"Predicted tags: {', '.join(tag_labels)}")
+    recommendations = _normalize_recommendations(item.get("recommendations"))
+    if recommendations:
+        lines.append(f"Recommendations: {', '.join(recommendations)}")
     return lines
 
 
